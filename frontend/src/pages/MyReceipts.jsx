@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getGatePassRequest, searchReceiverByServiceNo, getImageUrl, getExecutiveOfficers, updateExecutiveOfficer } from '../services/requestService';
+import { getGatePassRequest, searchReceiverByServiceNo, getImageUrl, getExecutiveOfficers, updateExecutiveOfficer } from '../services/requestService.js';
 import { 
   FaClock, 
   FaEye,
@@ -11,7 +11,7 @@ import {
   FaSearch,
   FaFilter
 } from 'react-icons/fa';
-import { getItemForReceiver } from '../services/myReceiptService';   
+import { getItemForReceiver } from '../services/myReceiptService.js';   
 
 
 
