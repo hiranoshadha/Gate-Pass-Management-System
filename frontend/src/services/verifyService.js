@@ -5,7 +5,7 @@ export const API_BASE_URL = import.meta.env.VITE_API_URL;
 // Create a new status
 export const createStatus = async (statusData) => {
     try {
-        const response = await axios.post(`${API_BASE_URL}/dispatch/create`, statusData);
+        const response = await axios.post(`${API_BASE_URL}/verify/create`, statusData);
         return response.data;
     } catch (error) {
         throw new Error(error.response?.data?.message || 'Failed to create status');
@@ -15,7 +15,7 @@ export const createStatus = async (statusData) => {
 // Get all pending statuses
 export const getPendingStatuses = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/dispatch/pending`);
+        const response = await axios.get(`${API_BASE_URL}/verify/pending`);
         return response.data;
     } catch (error) {
         throw new Error('Failed to fetch pending statuses');
@@ -26,7 +26,7 @@ export const getPendingStatuses = async () => {
 // Get all approved statuses
 export const getApprovedStatuses = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/dispatch/approved`);
+        const response = await axios.get(`${API_BASE_URL}/verify/approved`);
         return response.data;
     } catch (error) {
         throw new Error('Failed to fetch approved statuses');
@@ -36,7 +36,7 @@ export const getApprovedStatuses = async () => {
 // Get all rejected statuses
 export const getRejectedStatuses = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/dispatch/rejected`);
+        const response = await axios.get(`${API_BASE_URL}/verify/rejected`);
         return response.data;
     } catch (error) {
         throw new Error('Failed to fetch approved statuses');
@@ -44,9 +44,9 @@ export const getRejectedStatuses = async () => {
 };  
 
 // Approve a request (update status)
-export const approveStatus = async (referenceNumber, comment) => {
+export const approveStatus = async (referenceNumber, comment, loadingDetails, userServiceNumber) => {
     try {
-      const response = await axios.put(`${API_BASE_URL}/dispatch/${referenceNumber}/approve`, { comment });
+      const response = await axios.put(`${API_BASE_URL}/verify/${referenceNumber}/approve`, { comment, loadingDetails, userServiceNumber });
       return response.data;
     } catch (error) {
       throw new Error(error.response?.data?.message || 'Failed to approve status');
@@ -56,7 +56,7 @@ export const approveStatus = async (referenceNumber, comment) => {
 // Reject a request (update status)
 export const rejectStatus = async (referenceNumber, comment) => {
     try {
-        const response = await axios.put(`${API_BASE_URL}/dispatch/${referenceNumber}/reject`, { comment });
+        const response = await axios.put(`${API_BASE_URL}/verify/${referenceNumber}/reject`, { comment });
         return response.data;
     } catch (error) {
         throw new Error(error.response?.data?.message || 'Failed to reject status');
