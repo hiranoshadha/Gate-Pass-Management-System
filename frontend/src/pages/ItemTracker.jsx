@@ -11,7 +11,7 @@ import {
   FaSearch,
   FaFilter
 } from 'react-icons/fa';
-import { getItemForTrack } from '../services/itemService';   
+import { getItemForTrack } from '../services/itemService.js';   
 
 
 
