@@ -13,7 +13,6 @@ import Verify from "./pages/Verify";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { ToastProvider } from "./components/ToastProvider";
-import EmailForm from "./pages/Example";
 
 const App = () => {
     return (
@@ -31,7 +30,6 @@ const App = () => {
                         <Route path="/myrequests" element={<GatePassRequests />} />
                         <Route path="/itemTracker" element={<GatePassItemTracker />} />
                         <Route path="/myReceipts" element={<GatePassMyReicept />} />
-                        <Route path="/emailForm" element={<EmailForm />} />
                     </Route>
 
                     {/* Role-Specific Routes */}
