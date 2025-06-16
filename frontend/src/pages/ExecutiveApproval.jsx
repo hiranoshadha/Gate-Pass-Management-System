@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import {createStatus, getPendingStatuses, getApprovedStatuses, getRejectedStatuses, approveStatus, rejectStatus, searchUserByServiceNo} from '../services/approveService.js';
-import { getImageUrl, searchReceiverByServiceNo, getGatePassRequest } from '../services/requestService.js';
+import { getPendingStatuses, getApprovedStatuses, getRejectedStatuses, approveStatus, rejectStatus, searchUserByServiceNo} from '../services/approveService.js';
+import { getImageUrl, searchReceiverByServiceNo} from '../services/requestService.js';
 import { useToast } from '../components/ToastProvider.jsx';
 import { emailSent } from '../services/emailService.js';
 import { FaSearch } from 'react-icons/fa';
